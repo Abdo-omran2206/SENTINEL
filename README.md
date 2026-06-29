@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./logo.svg" width="200"/>
+  <img src="./logo.svg" width="400"/>
 </p>
 
 # 👁 Sentinel
@@ -13,7 +13,6 @@ Sentinel gives you full visibility into your machine — CPU, RAM, GPU, disk, ne
 ## ⚡ Features
 
 ### 🧠 System Overview
-
 - Live CPU usage (per-core + frequency monitoring)
 - RAM & swap usage tracking
 - System uptime + load average
@@ -22,7 +21,6 @@ Sentinel gives you full visibility into your machine — CPU, RAM, GPU, disk, ne
 ---
 
 ### 🖥 Hardware Monitoring
-
 - NVIDIA GPU usage (via GPUtil)
 - Temperature sensors (CPU / GPU where supported)
 - Fan speed monitoring (if available)
@@ -30,14 +28,12 @@ Sentinel gives you full visibility into your machine — CPU, RAM, GPU, disk, ne
 ---
 
 ### 💾 Storage
-
 - Disk usage per partition (used / free / total)
 - Real-time disk I/O (read/write speeds)
 
 ---
 
 ### 🌐 Network
-
 - Live upload/download speeds
 - Network interfaces (IP, MAC, traffic stats)
 - Active TCP/UDP connections mapped to processes
@@ -45,7 +41,6 @@ Sentinel gives you full visibility into your machine — CPU, RAM, GPU, disk, ne
 ---
 
 ### ⚙ Processes & Services
-
 - Top processes sorted by CPU / RAM
 - Searchable process list
 - Kill process capability
@@ -57,7 +52,6 @@ Sentinel gives you full visibility into your machine — CPU, RAM, GPU, disk, ne
 ---
 
 ### 🔋 Power
-
 - Battery percentage
 - Charging status
 - Estimated remaining time
@@ -66,30 +60,30 @@ Sentinel gives you full visibility into your machine — CPU, RAM, GPU, disk, ne
 
 ## ⌨️ Controls
 
-| Key   | Action                   |
-| ----- | ------------------------ |
-| `q`   | Quit application         |
+| Key   | Action |
+|------|--------|
+| `q`   | Quit application |
 | `1–9` | Navigate between screens |
-| Click | Sidebar navigation       |
+| Click | Sidebar navigation |
 
 ---
 
-### 🧩 Process Screen Controls
+## 🧩 Process Screen Controls
 
-| Action           | Description                |
-| ---------------- | -------------------------- |
-| Sort (CPU / RAM) | Toggle sorting mode        |
-| Kill Selected    | Terminate selected process |
-| Search           | Filter processes by name   |
+| Action | Description |
+|--------|-------------|
+| Sort (CPU / RAM) | Toggle sorting mode |
+| Kill Selected | Terminate selected process |
+| Search | Filter processes by name |
 
 ---
 
-### 🌐 Connections Screen
+## 🌐 Connections Screen
 
-| Action          | Description                 |
-| --------------- | --------------------------- |
+| Action | Description |
+|--------|-------------|
 | All Connections | Show all active connections |
-| Listening Only  | Show open ports only        |
+| Listening Only | Show open ports only |
 
 ---
 
@@ -106,19 +100,20 @@ source venv/bin/activate   # Windows: venv\Scripts\activate
 
 pip install -r requirements.txt
 python main.py
-```
+````
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 SENTINEL/
 ├── main.py              # App entry point & sidebar navigation
-├── sentinel.tcss        # Global Textual CSS theme
+├── sentinel.tcss       # Global Textual CSS theme
 ├── requirements.txt
 ├── .gitignore
 ├── logo.svg
+│
 ├── core/                # Pure data-fetching modules (no UI)
 │   ├── cpu.py
 │   ├── ram.py
@@ -135,6 +130,7 @@ SENTINEL/
 │   ├── battery.py
 │   ├── uptime.py
 │   └── system.py
+│
 ├── screens/             # Textual Widget screens (one per view)
 │   ├── dashboard.py
 │   ├── cpu_screen.py
@@ -151,9 +147,10 @@ SENTINEL/
 │   ├── users_screen.py
 │   ├── uptime_screen.py
 │   └── battery_screen.py
+│
 └── utils/
     └── formatter.py     # Smart byte/speed formatter (B → TB auto-scale)
----
+```
 
 ---
 
@@ -184,4 +181,3 @@ SENTINEL/
 * Temperature sensors vary by OS
 * Windows has limited hardware sensor access
 * Load average is not available on Windows
-```
