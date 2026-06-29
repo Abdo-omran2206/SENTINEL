@@ -1,0 +1,8 @@
+# Core TUI framework
+textual>=0.79.0
+
+# System monitoring (cross-platform)
+psutil>=5.9.0
+
+# GPU monitoring (NVIDIA) – optional but recommended
+GPUtil>=1.4.0

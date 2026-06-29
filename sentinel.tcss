@@ -1,0 +1,440 @@
+/* ═══════════════════════════════════════════════════════════════
+   sentinel.tcss – God's Eye Monitor – Global Theme
+   Dark · Cyan accent · Scrollable sidebar · 15 screens
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── App Root ───────────────────────────────────────────────── */
+Screen {
+    background: #0a0d14;
+    layout: horizontal;
+}
+
+/* ── Sidebar ────────────────────────────────────────────────── */
+#sidebar {
+    width: 22;
+    background: #0d1017;
+    border-right: solid #1c2233;
+    height: 100%;
+    layout: vertical;
+    overflow-y: auto;
+    scrollbar-size: 1 1;
+}
+
+#sidebar-logo {
+    padding: 1 2;
+    background: #071528;
+    color: #00d4ff;
+    text-style: bold;
+    border-bottom: solid #1c2233;
+    height: 4;
+    content-align: center middle;
+}
+
+.nav-section-header {
+    padding: 1 2 0 2;
+    height: 2;
+    color: #3a4a60;
+    text-style: bold;
+    background: transparent;
+    content-align: left bottom;
+}
+
+.nav-item {
+    padding: 0 2 0 3;
+    height: 3;
+    color: #6a7d96;
+    background: transparent;
+    width: 100%;
+    content-align: left middle;
+}
+
+.nav-item:hover {
+    background: #111a28;
+    color: #00d4ff;
+}
+
+.nav-item.-active {
+    background: #0a1e35;
+    color: #00d4ff;
+    border-left: tall #00d4ff;
+    text-style: bold;
+}
+
+/* ── Content ────────────────────────────────────────────────── */
+#content {
+    width: 1fr;
+    height: 100%;
+    layout: vertical;
+    overflow: hidden hidden;
+}
+
+/* ── All screen widgets fill content area ───────────────────── */
+DashboardScreen,
+CpuScreen,
+RamScreen,
+GpuScreen,
+TemperaturesScreen,
+DiskScreen,
+DiskIoScreen,
+NetworkScreen,
+InterfacesScreen,
+ConnectionsScreen,
+ProcessesScreen,
+ServicesScreen,
+UsersScreen,
+UptimeScreen,
+BatteryScreen {
+    width: 100%;
+    height: 1fr;
+    overflow: hidden auto;
+}
+
+/* ── Generic cards / headers ────────────────────────────────── */
+.info-card {
+    background: #0f1420;
+    border: round #1c2d44;
+    padding: 1 2;
+    margin: 1 0;
+    color: #c8d0e0;
+    height: auto;
+}
+
+.info-card:hover { border: round #00d4ff; }
+
+.section-header {
+    height: 3;
+    padding: 0 2;
+    background: #0d1017;
+    color: #c8d0e0;
+    border-bottom: solid #1c2233;
+    content-align: left middle;
+}
+
+/* ── Dashboard ──────────────────────────────────────────────── */
+#dash-grid {
+    layout: grid;
+    grid-size: 3 2;
+    grid-gutter: 1 2;
+    padding: 1 2;
+    height: 100%;
+}
+
+.dash-card {
+    background: #0f1420;
+    border: round #1c2d44;
+    padding: 1 2;
+    color: #c8d0e0;
+    height: 100%;
+}
+
+.dash-card:hover { border: round #00d4ff; }
+
+/* ── CPU ────────────────────────────────────────────────────── */
+#cpu-cores-container {
+    padding: 1 2;
+    overflow-y: auto;
+    height: 1fr;
+}
+
+.core-bar {
+    height: 2;
+    padding: 0 1;
+    color: #c8d0e0;
+}
+
+.core-bar:hover { background: #0f1825; }
+
+/* ── RAM ────────────────────────────────────────────────────── */
+#ram-container {
+    padding: 1 2;
+    layout: vertical;
+    height: 100%;
+    overflow-y: auto;
+}
+
+/* ── GPU ────────────────────────────────────────────────────── */
+#gpu-container {
+    padding: 1 2;
+    layout: vertical;
+    height: 100%;
+    overflow-y: auto;
+}
+
+/* ── Temperatures ───────────────────────────────────────────── */
+#temps-container {
+    padding: 1 2;
+    layout: vertical;
+    height: 100%;
+}
+
+#temps-row {
+    layout: horizontal;
+    height: 100%;
+}
+
+.temps-card {
+    background: #0f1420;
+    border: round #1c2d44;
+    padding: 1 2;
+    margin: 0 1 0 0;
+    color: #c8d0e0;
+    width: 1fr;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.temps-card:hover { border: round #00d4ff; }
+
+/* ── Disk ───────────────────────────────────────────────────── */
+#disk-container {
+    padding: 1 2;
+    layout: vertical;
+    height: 100%;
+}
+
+#disk-table {
+    height: 1fr;
+    background: #0a0d14;
+    border: round #1c2233;
+}
+
+/* ── Disk I/O ───────────────────────────────────────────────── */
+#diskio-container {
+    padding: 1 2;
+    layout: vertical;
+    height: 100%;
+}
+
+#diskio-table {
+    height: 1fr;
+    background: #0a0d14;
+    border: round #1c2233;
+    margin-top: 1;
+}
+
+/* ── Network Speed ──────────────────────────────────────────── */
+#net-container {
+    padding: 1 2;
+    layout: vertical;
+    height: 100%;
+}
+
+#net-speed-row {
+    layout: horizontal;
+    height: auto;
+}
+
+.net-card {
+    background: #0f1420;
+    border: round #1c2d44;
+    padding: 1 2;
+    margin: 0 0 1 0;
+    color: #c8d0e0;
+    height: auto;
+    width: 1fr;
+}
+
+.net-card:hover { border: round #00d4ff; }
+#net-dl { margin-right: 1; }
+
+/* ── Interfaces ─────────────────────────────────────────────── */
+#iface-container {
+    padding: 1 2;
+    layout: vertical;
+    height: 100%;
+}
+
+#iface-table {
+    height: 1fr;
+    background: #0a0d14;
+    border: round #1c2233;
+    margin-top: 1;
+}
+
+/* ── Connections ────────────────────────────────────────────── */
+#conn-container {
+    layout: vertical;
+    height: 100%;
+}
+
+#conn-toolbar {
+    height: 3;
+    layout: horizontal;
+    padding: 0 2;
+    margin-bottom: 1;
+}
+
+#conn-table {
+    height: 1fr;
+    border: round #1c2233;
+    background: #0a0d14;
+}
+
+/* ── Processes ──────────────────────────────────────────────── */
+#proc-container {
+    layout: vertical;
+    height: 100%;
+    padding: 1 2;
+}
+
+#proc-toolbar {
+    height: 3;
+    layout: horizontal;
+    margin-bottom: 1;
+}
+
+#proc-search {
+    width: 1fr;
+    margin-right: 1;
+    border: round #1c2d44;
+    background: #0f1420;
+    color: #c8d0e0;
+}
+
+#proc-search:focus { border: round #00d4ff; }
+
+#proc-status {
+    height: 1;
+    padding: 0 1;
+    color: #c8d0e0;
+}
+
+#proc-table {
+    height: 1fr;
+    border: round #1c2233;
+    background: #0a0d14;
+}
+
+/* ── Services ───────────────────────────────────────────────── */
+#svc-container {
+    layout: vertical;
+    height: 100%;
+    padding: 1 2;
+}
+
+#svc-toolbar {
+    height: 3;
+    layout: horizontal;
+    margin-bottom: 1;
+}
+
+#svc-search {
+    width: 100%;
+    border: round #1c2d44;
+    background: #0f1420;
+    color: #c8d0e0;
+}
+
+#svc-search:focus { border: round #00d4ff; }
+
+#svc-table {
+    height: 1fr;
+    border: round #1c2233;
+    background: #0a0d14;
+    margin-top: 1;
+}
+
+/* ── Users ──────────────────────────────────────────────────── */
+#users-container {
+    padding: 1 2;
+    layout: vertical;
+    height: 100%;
+}
+
+#users-table {
+    height: auto;
+    max-height: 50%;
+    border: round #1c2233;
+    background: #0a0d14;
+    margin: 1 0;
+}
+
+/* ── Uptime ─────────────────────────────────────────────────── */
+#uptime-container {
+    padding: 1 2;
+    layout: vertical;
+    height: 100%;
+}
+
+#uptime-row {
+    layout: horizontal;
+    height: auto;
+}
+
+#uptime-uptime { width: 1fr; margin-right: 1; }
+#uptime-load   { width: 1fr; }
+
+/* ── Battery ────────────────────────────────────────────────── */
+#bat-container {
+    padding: 1 2;
+    layout: vertical;
+    height: 100%;
+}
+
+/* ── DataTable ──────────────────────────────────────────────── */
+DataTable {
+    background: #0a0d14;
+    color: #c8d0e0;
+}
+
+DataTable > .datatable--header {
+    background: #0d1017;
+    color: #00d4ff;
+    text-style: bold;
+}
+
+DataTable > .datatable--cursor {
+    background: #0f1f33;
+    color: #ffffff;
+}
+
+DataTable > .datatable--hover {
+    background: #111825;
+}
+
+/* ── Inputs ─────────────────────────────────────────────────── */
+Input {
+    border: round #1c2d44;
+    background: #0f1420;
+    color: #c8d0e0;
+}
+
+Input:focus { border: round #00d4ff; }
+
+/* ── Buttons ────────────────────────────────────────────────── */
+Button {
+    margin: 0 1 0 0;
+    min-width: 14;
+    background: #101825;
+    color: #7a8399;
+    border: tall #1c2d44;
+}
+
+Button:hover { background: #131e30; color: #c8d0e0; }
+
+Button.primary {
+    background: #0a1e35;
+    color: #00d4ff;
+    border: tall #00d4ff;
+}
+
+Button.primary:hover { background: #0c2540; }
+
+Button.error {
+    background: #2d0c0c;
+    color: #ff6b6b;
+    border: tall #4a1515;
+}
+
+Button.error:hover { background: #3d1010; }
+
+/* ── Footer ─────────────────────────────────────────────────── */
+#footer-bar {
+    height: 1;
+    background: #070a10;
+    color: #2a3348;
+    padding: 0 2;
+    border-top: solid #1c2233;
+    content-align: left middle;
+    dock: bottom;
+}
